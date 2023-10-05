@@ -11,12 +11,12 @@ function App() {
   const emailInputRef = useRef()
   const passwordInputRef = useRef()
 
-  function handleLoginForm() {
+ async  function handleLoginForm() {
     const email = emailInputRef.current.value
     const password = passwordInputRef.current.value
     const hashedPassword = bcrypt.hashSync(password, '$2a$10$CwTycUXWue0Thq9StjUM0u') // hash created previously created upon sign up
 
-    fetch('https://api.sampleapis.com/beers/ale', {
+await    fetch('https://api.sampleapis.com/beers/ale', {
       method: 'POST',
       headers: {
         Accept: 'application/json',
